@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Debug Six - Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Horizontal Header Bar -->
+  <header class="main-header">
+    <div class="logo-area">
+      <h1>The Debug Six</h1>
+      <div class="bar-chart-icon"><span></span><span></span><span></span></div>
+    </div>
+    <div class="user-profile">
+      <div class="avatar-circle"></div>
+      <div class="user-info">
+        <span class="role-text">Role: Regional Cooperative Administrator</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    
+    <!-- Left Navigation Control Deck Sidebar -->
+    <aside class="sidebar">
+      <div class="filter-group">
+        <h3>⏳ Filter by Trade Skill</h3>
+        <ul class="nav-list" id="skill-filter-list">
+          <li class="active" data-skill="All">All Trades</li>
+          <li data-skill="Electrician">⚡ Electricians</li>
+          <li data-skill="Plumber">💧 Plumbers</li>
+          <li data-skill="Carpenter">🔨 Carpenters</li>
+          <li data-skill="Painter">🖌️ Painters</li>
+          <li data-skill="Caregiver">👤 Caregivers</li>
+        </ul>
+      </div>
+
+      <div class="filter-group">
+        <h3>✓ Verification Toggles</h3>
+        <div class="toggle-buttons">
+          <button class="btn-toggle active" id="toggle-all">All</button>
+          <button class="btn-toggle" id="toggle-pending">Pending</button>
+          <button class="btn-toggle" id="toggle-verified">Verified</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Workspace Area -->
+    <main class="main-workspace">
+      
+      <!-- Top Analytics Highlights Metrics Row -->
+      <section class="metrics-row">
+        <div class="card card-blue">
+          <div class="card-inner">
+            <div>
+              <div class="card-header">TOTAL REGISTERED WORKERS</div>
+              <div class="metric-value" id="stat-total">5</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-red">
+          <div class="card-inner">
+            <div>
+              <div class="card-header">PENDING VERIFICATIONS</div>
+              <div class="metric-value" id="stat-pending">3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 1: Registration Form Input Panel Widget -->
+      <section class="form-container-box">
+        <h2>📋 Step 1: Register New Cooperative Labor Profile</h2>
+        <form id="worker-registration-form" class="registration-form">
+          <div class="form-grid-layout">
+            <div class="input-field">
+              <label for="workerName">Worker Legal Name</label>
+              <input type="text" id="workerName" placeholder="e.g. Ramesh Kumar" required>
+            </div>
+            <div class="input-field">
+              <label for="workerSkill">Trade Skill Set</label>
+              <select id="workerSkill" required>
+                <option value="Electrician">Electrician</option>
+                <option value="Plumber">Plumber</option>
+                <option value="Carpenter">Carpenter</option>
+                <option value="Painter">Painter</option>
+                <option value="Caregiver">Caregiver</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label for="workerHub">Cooperative Association Hub</label>
+              <select id="workerHub" required>
+                <option value="Bhopal Central Union">Bhopal Central Union</option>
+                <option value="Arera Hills Cooperative">Arera Hills Cooperative</option>
+                <option value="Kolar Union Federation">Kolar Union Federation</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit-form">➕ Register Worker Record</button>
+        </form>
+      </section>
+
+      <!-- System Verification Data Grid Table -->
+      <section class="data-table-container">
+        <div class="table-header">
+          <h2>📊 System Verification Data Queue</h2>
+          <!-- STEP 3: Search & Match Query Filter Input Bar -->
+          <div class="search-box">
+            <input type="text" id="dashboard-search" placeholder="🔍 Step 3: Search by worker name...">
+          </div>
+        </div>
+
+        <table class="dashboard-table">
+          <thead>
+            <tr>
+              <th>Worker ID</th>
+              <th>Legal Name</th>
+              <th>Trade Skill</th>
+              <th>Cooperative Hub</th>
+              <th>Vetting Status / Step 4 Action</th>
+            </tr>
+          </thead>
+          <tbody id="table-body-target">
+            <!-- Dynamic data generated live by your script logic engine -->
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
